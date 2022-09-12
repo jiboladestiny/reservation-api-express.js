@@ -8,6 +8,10 @@ const HotelSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  show: {
+    type: Boolean,
+    default: true,
+  },
   city: {
     type: String,
     required: true,
