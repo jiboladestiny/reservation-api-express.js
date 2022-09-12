@@ -8,7 +8,7 @@ const HotelSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  show: {
+  reserve: {
     type: String,
     default: "true",
   },
