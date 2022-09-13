@@ -40,6 +40,11 @@ export const getHotel = async (req, res, next) => {
   }
 };
 export const getHotels = async (req, res, next) => {
+ Object.keys(req.query).forEach((key) => {
+   if (req.query[key] === "") {
+     delete req.query[key];
+   }
+ });
   const { min, max, ...others } = req.query;
   try {
     const hotels = await Hotel.find({

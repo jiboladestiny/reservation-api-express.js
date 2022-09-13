@@ -10,7 +10,7 @@ const HotelSchema = new mongoose.Schema({
   },
   reserve: {
     type: String,
-    default: "true",
+    default: "seen",
   },
   city: {
     type: String,
