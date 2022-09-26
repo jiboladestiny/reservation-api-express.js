@@ -45,6 +45,9 @@ export const getHotels = async (req, res, next) => {
      delete req.query[key];
    }
  });
+
+ console.log(req.query)
+
   const { min, max, ...others } = req.query;
   try {
     const hotels = await Hotel.find({
@@ -79,10 +82,10 @@ export const countByType = async (req, res, next) => {
 
     res.status(200).json([
       { type: "hotel", count: hotelCount },
-      { type: "apartments", count: apartmentCount },
-      { type: "resorts", count: resortCount },
-      { type: "villas", count: villaCount },
-      { type: "cabins", count: cabinCount },
+      { type: "apartment", count: apartmentCount },
+      { type: "resort", count: resortCount },
+      { type: "villa", count: villaCount },
+      { type: "cabin", count: cabinCount },
     ]);
   } catch (err) {
     next(err);
